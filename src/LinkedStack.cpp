@@ -1,8 +1,7 @@
 #include "../include/LinkedStack.h"
 #include <cassert>
 
-
-using namespace open_json::json;
+using namespace open_json;
 
 Node::Node() {
     next = std::shared_ptr<Node>(nullptr);

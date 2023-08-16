@@ -4,8 +4,7 @@
 #include <string>
 #include <map>
 
-
-namespace open_json::json {
+namespace open_json {
     class Json;
 
     struct JsonValue {
@@ -19,7 +18,7 @@ namespace open_json::json {
     public:
         JsonValue value;
 
-        Json parse(const std::string& jsonString);
+        Json parse(const std::string &jsonString);
     };
 }
 

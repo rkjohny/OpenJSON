@@ -2,7 +2,7 @@
 #define OPEN_JSON_SETTER_H
 
 
-namespace open_json::json {
+namespace open_json {
 
     template<class ClassT, class ArgT>
     class Setter {
@@ -18,7 +18,7 @@ namespace open_json::json {
 
     }; //Class Setter
 
-} // namespace open_json::json
+} // namespace open_json::common
 
 
 

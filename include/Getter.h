@@ -2,7 +2,7 @@
 #define OPEN_JSON_GETTER_H
 
 
-namespace open_json::json {
+namespace open_json {
 
     template<class ClassT, class ReturnT>
     class Getter {
@@ -17,7 +17,7 @@ namespace open_json::json {
         }
     };
 
-} // namespace open_json::json
+} // namespace open_json::common
 
 
 #endif //OPEN_JSON_GETTER_H

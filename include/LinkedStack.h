@@ -5,8 +5,8 @@
 #include <string>
 #include "Common.h"
 
+namespace open_json {
 
-namespace open_json::json {
     class Node {
     public:
         std::string value;
@@ -36,6 +36,6 @@ namespace open_json::json {
     };
 
 } // open_json
-// json
+// common
 
 #endif //OPEN_JSON_LINKED_LIST_H
