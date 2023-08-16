@@ -4,23 +4,24 @@
 #include <string>
 #include <map>
 
-namespace open_json {
-    namespace json {
-        class Json;
 
-        struct JsonValue {
-        public:
-            std::string name;
-            std::string value;
-            std::map<std::string, Json> subObject;
-        };
+namespace open_json::json {
+    class Json;
 
-        class Json {
-        public:
-            JsonValue value;
-            Json parse(std::string jsonString);
-        };
-    }
+    struct JsonValue {
+    public:
+        std::string name;
+        std::string value;
+        std::map<std::string, Json> subObject;
+    };
+
+    class Json {
+    public:
+        JsonValue value;
+
+        Json parse(const std::string& jsonString);
+    };
 }
+
 
 #endif //OPEN_JSON_JSON_H

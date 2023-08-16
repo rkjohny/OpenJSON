@@ -2,6 +2,6 @@
 
 using namespace open_json::json;
 
-Json Json::parse(std::string jsonString) {
+Json Json::parse(const std::string& jsonString) {
 
 }

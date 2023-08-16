@@ -1,24 +1,25 @@
 #ifndef OPEN_JSON_SETTER_H
 #define OPEN_JSON_SETTER_H
 
-namespace open_json {
-    namespace json {
 
-        template<class ClassT, class ArgT>
-        class Setter {
-        public:
-            typedef void (ClassT::*SetterPtr)(ArgT);
+namespace open_json::json {
 
-            SetterPtr fp;
-            const char *name;
+    template<class ClassT, class ArgT>
+    class Setter {
+    private:
+        typedef void (ClassT::*SetterPtr)(ArgT);
 
-            constexpr Setter(SetterPtr fp, const char *name) : fp(fp), name(name) {
-            }
+        SetterPtr fp;
+        const char *name;
 
-        }; //Class Setter
+    public:
+        constexpr Setter(SetterPtr fp, const char *name) : fp(fp), name(name) {
+        }
 
-    } // namespace json
-} // namespace open_json
+    }; //Class Setter
+
+} // namespace open_json::json
+
 
 
 #endif //OPEN_JSON_SETTER_H

@@ -1,22 +1,23 @@
 #ifndef OPEN_JSON_GETTER_H
 #define OPEN_JSON_GETTER_H
 
-namespace open_json {
-    namespace json {
 
-        template<class ClassT, class ReturnT>
-        class Getter {
-        public:
-            typedef ReturnT(ClassT::*GetterPtr)() const;
+namespace open_json::json {
 
-            GetterPtr fp;
-            const char *name;
+    template<class ClassT, class ReturnT>
+    class Getter {
+    private:
+        typedef ReturnT(ClassT::*GetterPtr)() const;
 
-            constexpr Getter(GetterPtr fp, const char *name) : fp(fp), name(name) {
-            }
-        };
+        GetterPtr fp;
+        const char *name;
 
-    } // namespace json
-} // namespace open_json
+    public:
+        constexpr Getter(GetterPtr fp, const char *name) : fp(fp), name(name) {
+        }
+    };
+
+} // namespace open_json::json
+
 
 #endif //OPEN_JSON_GETTER_H

@@ -5,35 +5,37 @@
 #include <string>
 #include "Common.h"
 
-namespace open_json {
-    namespace json {
-        class Node {
-        public:
-            std::string value;
-            std::shared_ptr<Node> next;
-            std::shared_ptr<Node> prev;
 
-        public:
-            Node();
+namespace open_json::json {
+    class Node {
+    public:
+        std::string value;
+        std::shared_ptr<Node> next;
+        std::shared_ptr<Node> prev;
 
-            virtual ~Node();
-        };
+    public:
+        Node();
 
-        class LinkedStack {
-        public:
-            std::shared_ptr<Node> top;
+        virtual ~Node();
+    };
 
-        public:
-            LinkedStack();
+    class LinkedStack {
+    public:
+        std::shared_ptr<Node> top;
 
-            virtual ~LinkedStack();
+    public:
+        LinkedStack();
 
-            std::shared_ptr<Node> pop();
+        virtual ~LinkedStack();
 
-            void push(std::shared_ptr<Node>node);
-        };
+        std::shared_ptr<Node> pop();
 
-    } // open_json
-} // json
+        void push(NOT_NULL const std::shared_ptr<Node> &node);
+
+        void push(NOT_NULL Node *node);
+    };
+
+} // open_json
+// json
 
 #endif //OPEN_JSON_LINKED_LIST_H
