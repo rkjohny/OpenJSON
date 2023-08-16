@@ -5,27 +5,27 @@
 using namespace open_json;
 
 Node::Node() {
-    next = std::shared_ptr<Node>(nullptr);
-    prev = std::shared_ptr<Node>(nullptr);
+    m_next = std::shared_ptr<Node>(nullptr);
+    m_prev = std::shared_ptr<Node>(nullptr);
 }
 
 [[maybe_unused]] std::shared_ptr<Node> LinkedStack::pop() {
-    if (IS_NULL(top)) {
+    if (IS_NULL(m_top)) {
         return {nullptr};
     }
-    std::shared_ptr<Node> ret = top;
-    top = top->prev;
+    std::shared_ptr<Node> ret = m_top;
+    m_top = m_top->m_prev;
     return ret;
 }
 
 [[maybe_unused]] void LinkedStack::push(const std::shared_ptr<Node> &node) {
     assert(IS_NULL(node));
-    if (IS_NULL(top)) {
-        top = node;
+    if (IS_NULL(m_top)) {
+        m_top = node;
     } else {
-        top->next = node;
-        node->prev = top;
-        top = node;
+        m_top->m_next = node;
+        node->m_prev = m_top;
+        m_top = node;
     }
 }
 

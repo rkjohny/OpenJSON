@@ -4,19 +4,19 @@
 namespace open_json {
     class Object {
     public:
-        Object() = default;
+        constexpr Object() = default;
 
         virtual ~Object() = default;
 
-        Object(Object &&other) noexcept = default;
+        constexpr Object(Object &&other) noexcept = default;
 
-        Object(const Object &other) = delete;
+        constexpr Object(const Object &other) = delete;
 
-        Object(Object &other) = delete;
+        constexpr Object(Object &other) = delete;
 
-        Object &operator=(const Object &other) = delete;
+        constexpr Object &operator=(const Object &other) = delete;
 
-        Object &operator=(const Object other) = delete;
+        constexpr Object &operator=(const Object other) = delete;
     };
 }
 

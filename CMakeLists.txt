@@ -12,4 +12,6 @@ add_library(OpenJSON
         include/LinkedStack.h
         include/Common.h
         include/Object.h
+        src/Singleton.cpp
+        include/Singleton.h
 )

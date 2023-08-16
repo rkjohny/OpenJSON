@@ -7,12 +7,14 @@
 #include "Object.h"
 
 namespace open_json {
+    class LinkedStack;
 
     class Node : virtual public Object {
-    public:
-        std::string value;
-        std::shared_ptr<Node> next;
-        std::shared_ptr<Node> prev;
+        friend class LinkedStack;
+    private:
+        std::string m_value;
+        std::shared_ptr<Node> m_next;
+        std::shared_ptr<Node> m_prev;
 
     public:
         Node();
@@ -23,8 +25,8 @@ namespace open_json {
     };
 
     class LinkedStack : virtual public Object {
-    public:
-        std::shared_ptr<Node> top = nullptr;
+    private:
+        std::shared_ptr<Node> m_top = nullptr;
 
     public:
         LinkedStack() = default;
