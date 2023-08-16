@@ -17,7 +17,7 @@ LinkedStack::LinkedStack() {
 LinkedStack::~LinkedStack() = default;
 
 std::shared_ptr<Node> LinkedStack::pop() {
-    if (top == nullptr) {
+    if (IS_NULL(top)) {
         return {nullptr};
     }
     std::shared_ptr<Node> ret = top;
@@ -26,8 +26,8 @@ std::shared_ptr<Node> LinkedStack::pop() {
 }
 
 void LinkedStack::push(const std::shared_ptr<Node> &node) {
-    assert(node == nullptr || node.get() == nullptr);
-    if (top == nullptr) {
+    assert(IS_NULL(node));
+    if (IS_NULL(top)) {
         top = node;
     } else {
         top->next = node;
@@ -36,7 +36,7 @@ void LinkedStack::push(const std::shared_ptr<Node> &node) {
     }
 }
 
-void LinkedStack::push(Node *node) {
-    assert(node == nullptr);
-    push(std::shared_ptr<Node>(node));
+void LinkedStack::push(const Node *node) {
+    assert(IS_NULL(node));
+    push(std::shared_ptr<Node>(const_cast<Node *>(node)));
 }

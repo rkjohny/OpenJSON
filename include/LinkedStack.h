@@ -32,7 +32,7 @@ namespace open_json {
 
         void push(NOT_NULL const std::shared_ptr<Node> &node);
 
-        void push(NOT_NULL Node *node);
+        void push(NOT_NULL const Node *node);
     };
 
 } // open_json
