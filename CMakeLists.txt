@@ -11,4 +11,5 @@ add_library(OpenJSON
         src/LinkedStack.cpp
         include/LinkedStack.h
         include/Common.h
+        include/Object.h
 )

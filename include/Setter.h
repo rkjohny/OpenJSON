@@ -1,25 +1,22 @@
 #ifndef OPEN_JSON_SETTER_H
 #define OPEN_JSON_SETTER_H
 
-
 namespace open_json {
 
     template<class ClassT, class ArgT>
-    class Setter {
+    class [[maybe_unused]] Setter {
     private:
         typedef void (ClassT::*SetterPtr)(ArgT);
 
-        SetterPtr fp;
-        const char *name;
+        [[maybe_unused]] SetterPtr fp;
+        [[maybe_unused]] const char *name;
 
     public:
-        constexpr Setter(SetterPtr fp, const char *name) : fp(fp), name(name) {
+        [[maybe_unused]] constexpr Setter(SetterPtr fp, const char *name) : fp(fp), name(name) {
         }
 
     }; //Class Setter
 
 } // namespace open_json::common
-
-
 
 #endif //OPEN_JSON_SETTER_H

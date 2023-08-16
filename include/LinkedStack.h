@@ -4,10 +4,11 @@
 #include <memory>
 #include <string>
 #include "Common.h"
+#include "Object.h"
 
 namespace open_json {
 
-    class Node {
+    class Node : virtual public Object {
     public:
         std::string value;
         std::shared_ptr<Node> next;
@@ -16,23 +17,29 @@ namespace open_json {
     public:
         Node();
 
-        virtual ~Node();
+        ~Node() override = default;
+
+        Node(Node &&node) noexcept = default;
     };
 
-    class LinkedStack {
+    class LinkedStack : virtual public Object {
     public:
-        std::shared_ptr<Node> top;
+        std::shared_ptr<Node> top = nullptr;
 
     public:
-        LinkedStack();
+        LinkedStack() = default;
 
-        virtual ~LinkedStack();
+        LinkedStack(LinkedStack &&other) noexcept = default;
 
-        std::shared_ptr<Node> pop();
+        ~LinkedStack() override = default;
 
-        void push(NOT_NULL const std::shared_ptr<Node> &node);
+        [[maybe_unused]] std::shared_ptr<Node> pop();
 
-        void push(NOT_NULL const Node *node);
+        [[maybe_unused]] void push(NOT_NULL const std::shared_ptr<Node> &node);
+
+        [[maybe_unused]] void push(NOT_NULL const Node *node);
+
+        [[maybe_unused]] void push(NOT_NULL Node &&node);
     };
 
 } // open_json
