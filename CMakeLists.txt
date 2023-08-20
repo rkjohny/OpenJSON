@@ -15,25 +15,25 @@ add_library(OpenJSON
         src/Singleton.cpp
         include/Singleton.h
         include/TypeTraits.h
-        include/TypeTraitsChar.h
-        include/TypeTraitsInt8.h
-        include/TypeTrailsCommon.h
-        include/TypeTraitsUint8.h
-        include/TypeTraitsInt16.h
-        include/TypeTraitsUint16.h
-        include/TypeTraitsInt32.h
-        include/TypeTraitsUint32.h
-        include/TypeTraitsInt64.h
-        include/TypeTraitsUint64.h
-        include/TypeTraitsFlot.h
-        include/TypeTraitsDouble.h
-        include/TypeTraitsLongDouble.h
-        include/TypeTraitsBool.h
-        include/TypeTraitsString.h
-        include/TypeTraitsVector.h
-        include/TypeTraitsEnum.h
-        include/TypeTraitsClass.h
-        include/TypeTraitsPrimitive.h
-        include/TypeTraitsDecimal.h
-        include/TypeTraitsInteger.h
+        include/type_traits/TypeTraitsChar.h
+        include/type_traits/TypeTraitsInt8.h
+        include/type_traits/TypeTrailsCommon.h
+        include/type_traits/TypeTraitsUint8.h
+        include/type_traits/TypeTraitsInt16.h
+        include/type_traits/TypeTraitsUint16.h
+        include/type_traits/TypeTraitsInt32.h
+        include/type_traits/TypeTraitsUint32.h
+        include/type_traits/TypeTraitsInt64.h
+        include/type_traits/TypeTraitsUint64.h
+        include/type_traits/TypeTraitsFlot.h
+        include/type_traits/TypeTraitsDouble.h
+        include/type_traits/TypeTraitsLongDouble.h
+        include/type_traits/TypeTraitsBool.h
+        include/type_traits/TypeTraitsString.h
+        include/type_traits/TypeTraitsVector.h
+        include/type_traits/TypeTraitsEnum.h
+        include/type_traits/TypeTraitsClass.h
+        include/type_traits/TypeTraitsPrimitive.h
+        include/type_traits/TypeTraitsDecimal.h
+        include/type_traits/TypeTraitsInteger.h
 )
