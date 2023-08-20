@@ -5,21 +5,7 @@
 #include <map>
 
 namespace open_json {
-    class Json;
 
-    struct JsonValue {
-    public:
-        std::string name;
-        std::string value;
-        std::map<std::string, Json> subObject;
-    };
-
-    class Json {
-    public:
-        JsonValue value;
-
-        Json parse(const std::string &jsonString);
-    };
 }
 
 
