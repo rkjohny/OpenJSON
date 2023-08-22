@@ -2,6 +2,7 @@
 #define OPEN_JSON_TYPE_TRAITS_INT64_H
 
 #include <cstdint>
+#include "../Common.h"
 #include "TypeTrailsCommon.h"
 
 namespace open_json {
@@ -67,5 +68,12 @@ namespace open_json {
     public:
         static const bool value = Is_Int64_type<U>::value || Is_Int64_type<P>::value;
     };
+
+    /**
+    * make compilable with long long int in 64 bit word size system
+    */
+#ifdef WIN32_OS
+    typedef long long int int_64_t;
+#endif
 }
 #endif //OPEN_JSON_TYPE_TRAITS_INT64_H

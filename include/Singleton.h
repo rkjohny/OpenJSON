@@ -1,29 +1,29 @@
 #ifndef OPEN_JSON_SINGLETON_H
 #define OPEN_JSON_SINGLETON_H
 
+#include <memory>
+#include "Common.h"
+
 namespace open_json {
     template<class T>
     class Singleton {
-    private:
+    protected:
         constexpr Singleton() = default;
         static T m_singleton;
-
     public:
         virtual ~Singleton() = default;
-
-        constexpr Singleton(Singleton &&other) noexcept = delete;
-
-        constexpr Singleton(const Singleton &other) = delete;
-
-        constexpr Singleton(Singleton &other) = delete;
-
-        constexpr Singleton &operator=(const Singleton &other) = delete;
-
-        constexpr Singleton &operator=(const Singleton other) = delete;
-
-        [[maybe_unused]] T const &getInstance();
-
-        [[maybe_unused]] T const *get();
+        Singleton(Singleton&) = delete;
+        Singleton(const Singleton &another) = delete;
+        Singleton(Singleton &&another) = delete;
+        Singleton(const Singleton &&another) = delete;
+        Singleton(std::shared_ptr<Singleton> &another) = delete;
+        Singleton(const std::shared_ptr<Singleton> &another) = delete;
+        Singleton& operator=(const Singleton another) = delete;
+        Singleton& operator=(Singleton &another) = delete;
+        Singleton& operator=(const Singleton &another) = delete;
+        Singleton& operator=(Singleton &&another) = delete;
+        Singleton& operator=(const Singleton &&another) = delete;
+        [[maybe_unused]] T static const &getInstance();
     };
 }
 

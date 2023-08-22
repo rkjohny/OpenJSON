@@ -2,6 +2,7 @@
 #define OPEN_JSON_TYPE_TRAITS_INT32_H
 
 #include <cstdint>
+#include "../Common.h"
 #include "TypeTrailsCommon.h"
 
 namespace open_json {
@@ -67,6 +68,13 @@ namespace open_json {
         static const bool value = Is_Int32_type<U>::value || Is_Int32_type<P>::value;
     };
 
+
+    /**
+    * make compilable with long int is 32 bit word size system.
+    */
+#ifdef WIN32_OS
+    typedef long int int_32_t;
+#endif
 }
 
 #endif //OPEN_JSON_TYPE_TRAITS_INT32_H

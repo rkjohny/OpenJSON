@@ -6,8 +6,8 @@ set(CMAKE_CXX_STANDARD 17)
 add_library(OpenJSON
         include/Getter.h
         include/Setter.h
-        include/Json.h
-        src/Json.cpp
+        include/JsonParser.h
+        src/JsonParser.cpp
         src/LinkedStack.cpp
         include/LinkedStack.h
         include/Common.h
@@ -36,4 +36,13 @@ add_library(OpenJSON
         include/type_traits/TypeTraitsPrimitive.h
         include/type_traits/TypeTraitsDecimal.h
         include/type_traits/TypeTraitsInteger.h
+        src/Json.cpp
+        include/Json.h
+        include/AllowedToCreateNew.h
+        include/NonCopyNonMoveAble.h
+        include/CopyAbleMoveAble.h
+        include/NonCopyMoveAble.h
+        include/Static.h
+        include/Serializable.h
+        src/CopyAbleMoveAble.cpp
 )

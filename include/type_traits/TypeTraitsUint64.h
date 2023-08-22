@@ -67,6 +67,13 @@ namespace open_json {
     public:
         static const bool value = Is_UInt64_type<U>::value || Is_UInt64_type<P>::value;
     };
+
+    /**
+    * make compilable with long long int in 64 bit word size system
+    */
+#ifdef WIN32_OS
+    typedef unsigned long long int uint_64_t;
+#endif
 }
 
 #endif //OPEN_JSON_TYPE_TRAITS_UINT64_H
