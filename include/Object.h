@@ -7,10 +7,12 @@ namespace open_json {
     class Object : public NonCopyMoveAble {
     public:
         explicit Object() = default;
-        virtual ~Object() = default;
+
+        ~Object() override = default;
 
         Object(Object &&other) noexcept = default;
-        Object &operator=(Object &&other) = default;
+
+        Object &operator=(Object &&other) noexcept = default;
     };
 }
 

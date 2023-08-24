@@ -9,20 +9,33 @@ namespace open_json {
     class Singleton {
     protected:
         constexpr Singleton() = default;
+
         static T m_singleton;
     public:
         virtual ~Singleton() = default;
-        Singleton(Singleton&) = delete;
+
+        Singleton(Singleton &) = delete;
+
         Singleton(const Singleton &another) = delete;
-        Singleton(Singleton &&another) = delete;
-        Singleton(const Singleton &&another) = delete;
+
+        Singleton(Singleton &&another) noexcept = delete;
+
+        Singleton(const Singleton &&another) noexcept = delete;
+
         Singleton(std::shared_ptr<Singleton> &another) = delete;
+
         Singleton(const std::shared_ptr<Singleton> &another) = delete;
-        Singleton& operator=(const Singleton another) = delete;
-        Singleton& operator=(Singleton &another) = delete;
-        Singleton& operator=(const Singleton &another) = delete;
-        Singleton& operator=(Singleton &&another) = delete;
-        Singleton& operator=(const Singleton &&another) = delete;
+
+        Singleton &operator=(const Singleton another) = delete;
+
+        Singleton &operator=(Singleton &another) = delete;
+
+        Singleton &operator=(const Singleton &another) = delete;
+
+        Singleton &operator=(Singleton &&another) noexcept = delete;
+
+        Singleton &operator=(const Singleton &&another) noexcept = delete;
+
         [[maybe_unused]] T static const &getInstance();
     };
 }

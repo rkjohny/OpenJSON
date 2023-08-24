@@ -11,14 +11,20 @@ namespace open_json {
     class NonCopyMoveAble : public AllowedToCreateNew {
     public:
         constexpr NonCopyMoveAble() = default;
-        virtual ~NonCopyMoveAble() = default;
+
+        ~NonCopyMoveAble() override = default;
 
         NonCopyMoveAble(NonCopyMoveAble &another) = delete;
+
         NonCopyMoveAble(const NonCopyMoveAble &another) = delete;
-        NonCopyMoveAble(NonCopyMoveAble &&another) = default;
-        NonCopyMoveAble& operator=(NonCopyMoveAble &another) = delete;
-        NonCopyMoveAble& operator=(const NonCopyMoveAble &another) = delete;
-        NonCopyMoveAble& operator=(NonCopyMoveAble &&another) = default;
+
+        NonCopyMoveAble(NonCopyMoveAble &&another) noexcept = default;
+
+        NonCopyMoveAble &operator=(NonCopyMoveAble &another) = delete;
+
+        NonCopyMoveAble &operator=(const NonCopyMoveAble &another) = delete;
+
+        NonCopyMoveAble &operator=(NonCopyMoveAble &&another) noexcept = default;
     };
 }
 

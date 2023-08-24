@@ -20,7 +20,7 @@ namespace open_json {
     public:
         Node();
 
-        virtual ~Node() override = default;
+        ~Node() override = default;
 
         Node(Node &&other) noexcept: m_value(std::move(other.m_value)), m_next(std::move(other.m_next)),
                                      m_prev(std::move(other.m_prev)) {
@@ -45,7 +45,7 @@ namespace open_json {
 
         LinkedStack &operator=(LinkedStack &&other) noexcept;
 
-        virtual ~LinkedStack() override = default;
+        ~LinkedStack() override = default;
 
         [[maybe_unused]] std::shared_ptr<Node> pop();
 

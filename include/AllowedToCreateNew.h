@@ -7,6 +7,7 @@ namespace open_json {
     class AllowedToCreateNew {
     public:
         constexpr AllowedToCreateNew() = default;
+
         virtual ~AllowedToCreateNew() = default;
     };
 }

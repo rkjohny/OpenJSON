@@ -10,23 +10,26 @@ namespace open_json {
     class CopyAbleMoveAble : public AllowedToCreateNew {
     public:
         CopyAbleMoveAble(CopyAbleMoveAble &another) = default;
+
         CopyAbleMoveAble(const CopyAbleMoveAble &another) = default;
+
         CopyAbleMoveAble(CopyAbleMoveAble &&another) noexcept = default;
 
         explicit CopyAbleMoveAble(std::shared_ptr<CopyAbleMoveAble> &another);
+
         explicit CopyAbleMoveAble(const std::shared_ptr<CopyAbleMoveAble> &another);
 
-        CopyAbleMoveAble & operator=(const CopyAbleMoveAble another) = delete;
+        CopyAbleMoveAble &operator=(const CopyAbleMoveAble &another);
 
-        CopyAbleMoveAble & operator=(CopyAbleMoveAble  &another);
-        CopyAbleMoveAble & operator=(const CopyAbleMoveAble &another);
-        CopyAbleMoveAble & operator=(CopyAbleMoveAble &&another);
-        CopyAbleMoveAble & operator=(const CopyAbleMoveAble &&another);
-        CopyAbleMoveAble & operator=(std::shared_ptr<CopyAbleMoveAble> &another);
-        CopyAbleMoveAble & operator=(const std::shared_ptr<CopyAbleMoveAble> &another);
+        CopyAbleMoveAble &operator=(CopyAbleMoveAble &&another) noexcept;
 
-        void copy(CopyAbleMoveAble &another);
-        void copy(const CopyAbleMoveAble &another);
+        CopyAbleMoveAble &operator=(std::shared_ptr<CopyAbleMoveAble> &another);
+
+        CopyAbleMoveAble &operator=(const std::shared_ptr<CopyAbleMoveAble> &another);
+
+        void copy(CopyAbleMoveAble &another) {};
+
+        void copy(const CopyAbleMoveAble &another) {};
     };
 }
 

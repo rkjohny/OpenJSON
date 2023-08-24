@@ -6,9 +6,10 @@
 namespace open_json {
     class NotAllowedToCreateNew {
     public:
-        constexpr NotAllowedToCreateNew() = delete; \
+        constexpr NotAllowedToCreateNew() = delete;
+
         virtual ~NotAllowedToCreateNew() = delete;
     };
 }
 
-#endif //OPEN_JSON_NOT_ALLOWED_TO_CREATENEW_H
+#endif //OPEN_JSON_NOT_ALLOWED_TO_CREATE_NEW_H

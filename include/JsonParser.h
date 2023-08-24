@@ -8,7 +8,7 @@
 namespace open_json {
     class JsonParser {
     public:
-        [[maybe_unused]] static open_json::Json parser(std::string jsonStr);
+        [[maybe_unused]] static open_json::Json parser(const std::string &jsonStr);
     };
 }
 

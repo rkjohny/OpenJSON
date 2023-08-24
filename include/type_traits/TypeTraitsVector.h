@@ -29,7 +29,7 @@ namespace open_json {
     };
 
     template<class T, class Alloc>
-    struct Is_Vector<const std::vector<T, Alloc>&> {
+    struct Is_Vector<const std::vector<T, Alloc> &> {
         static const bool value = true;
     };
 

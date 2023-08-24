@@ -10,9 +10,9 @@ namespace open_json {
 
         Json(Json &&other) noexcept = default;
 
-        virtual ~Json();
+        ~Json() override;
 
-        Json &operator=(Json &&other) noexcept= default;
+        Json &operator=(Json &&other) noexcept = default;
 
         class Value {
         public:

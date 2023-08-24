@@ -7,9 +7,10 @@
 #include "CopyAbleMoveAble.h"
 
 namespace open_json {
-    class Serializable : virtual public AllowedToCreateNew, virtual public CopyAbleMoveAble {
+    class Serializable : virtual public CopyAbleMoveAble {
     public:
         virtual std::string toString(const Serializable &obj) = 0;
+
         virtual std::string toJson(const Serializable &obj) = 0;
     };
 
