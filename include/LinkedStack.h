@@ -22,12 +22,14 @@ namespace open_json {
 
         virtual ~Node() override = default;
 
-        Node(Node &&other) noexcept: m_value(std::move(other.m_value)), m_next(std::move(other.m_next)), m_prev(std::move(other.m_prev)) {
+        Node(Node &&other) noexcept: m_value(std::move(other.m_value)), m_next(std::move(other.m_next)),
+                                     m_prev(std::move(other.m_prev)) {
             other.m_value = "";
             other.m_prev = nullptr;
             other.m_next = nullptr;
         }
-        Node &operator = (Node &&other);
+
+        Node &operator=(Node &&other) noexcept;
     };
 
     class LinkedStack : public Object {
@@ -41,7 +43,7 @@ namespace open_json {
             other.m_top = nullptr;
         };
 
-        LinkedStack &operator = (LinkedStack &&other);
+        LinkedStack &operator=(LinkedStack &&other) noexcept;
 
         virtual ~LinkedStack() override = default;
 

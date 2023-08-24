@@ -8,21 +8,21 @@ namespace open_json {
     public:
         Json();
 
-        Json(Json &&other) = default;
+        Json(Json &&other) noexcept = default;
 
         virtual ~Json();
 
-        Json &operator=(Json &&other) = default;
+        Json &operator=(Json &&other) noexcept= default;
 
         class Value {
         public:
             Value();
 
-            Value(Value &&other) = default;
+            Value(Value &&other) noexcept = default;
 
             virtual ~Value();
 
-            Value &operator=(Value &&other) = default;
+            Value &operator=(Value &&other) noexcept = default;
         };
     };
 }

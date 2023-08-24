@@ -9,7 +9,7 @@ Node::Node() {
     m_prev = std::shared_ptr<Node>(nullptr);
 }
 
-Node &Node::operator=(Node &&other) {
+Node &Node::operator=(Node &&other) noexcept {
     this->m_value = std::move(other.m_value);
     this->m_next = std::move(other.m_prev);
     this->m_prev = std::move(other.m_prev);
@@ -50,7 +50,7 @@ Node &Node::operator=(Node &&other) {
     push(std::make_shared<Node>(std::move(node)));
 }
 
-LinkedStack &LinkedStack::operator=(LinkedStack &&other) {
+LinkedStack &LinkedStack::operator=(LinkedStack &&other) noexcept {
     this->m_top = std::move(other.m_top);
     other.m_top = nullptr;
     return *this;
