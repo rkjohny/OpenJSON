@@ -9,6 +9,17 @@ Node::Node() {
     m_prev = std::shared_ptr<Node>(nullptr);
 }
 
+Node &Node::operator=(Node &&other) {
+    this->m_value = std::move(other.m_value);
+    this->m_next = std::move(other.m_prev);
+    this->m_prev = std::move(other.m_prev);
+
+    other.m_value = "";
+    other.m_prev = nullptr;
+    other.m_next = nullptr;
+    return *this;
+}
+
 [[maybe_unused]] std::shared_ptr<Node> LinkedStack::pop() {
     if (IS_NULL(m_top)) {
         return {nullptr};
@@ -37,4 +48,10 @@ Node::Node() {
 [[maybe_unused]] void LinkedStack::push(Node &&node) {
     assert(IS_NULL(&node));
     push(std::make_shared<Node>(std::move(node)));
+}
+
+LinkedStack &LinkedStack::operator=(LinkedStack &&other) {
+    this->m_top = std::move(other.m_top);
+    other.m_top = nullptr;
+    return *this;
 }

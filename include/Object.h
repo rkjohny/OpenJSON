@@ -1,22 +1,16 @@
 #ifndef OPEN_JSON_OBJECT_H
 #define OPEN_JSON_OBJECT_H
 
-namespace open_json {
-    class Object {
-    public:
-        constexpr Object() = default;
+#include "NonCopyMoveAble.h"
 
+namespace open_json {
+    class Object : public NonCopyMoveAble {
+    public:
+        explicit Object() = default;
         virtual ~Object() = default;
 
-        constexpr Object(Object &&other) noexcept = default;
-
-        constexpr Object(const Object &other) = delete;
-
-        constexpr Object(Object &other) = delete;
-
-        constexpr Object &operator=(const Object &other) = delete;
-
-        constexpr Object &operator=(const Object other) = delete;
+        Object(Object &&other) noexcept = default;
+        Object &operator=(Object &&other) = default;
     };
 }
 
