@@ -45,4 +45,5 @@ add_library(OpenJSON
         include/Static.h
         include/Serializable.h
         src/CopyAbleMoveAble.cpp
+        src/Serializable.cpp
 )

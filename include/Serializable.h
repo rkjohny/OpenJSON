@@ -9,9 +9,21 @@
 namespace open_json {
     class Serializable : virtual public CopyAbleMoveAble {
     public:
-        virtual std::string toString(const Serializable &obj) = 0;
+        Serializable() = default;
 
-        virtual std::string toJson(const Serializable &obj) = 0;
+        ~Serializable() override = default;
+
+        Serializable(const Serializable &another) = default;
+
+        Serializable(Serializable &&another) noexcept = default;
+
+        explicit Serializable(const std::shared_ptr<Serializable> &another);
+
+        Serializable &operator=(const Serializable &another) = default;
+
+        Serializable &operator=(Serializable &&another) noexcept = default;
+
+         Serializable &operator=(const std::shared_ptr<Serializable> &another);
     };
 
 } // open_json
