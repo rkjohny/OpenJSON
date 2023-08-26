@@ -1,10 +1,10 @@
 #ifndef OPEN_JSON_JSON_H
 #define OPEN_JSON_JSON_H
 
-#include "Object.h"
+#include "../base_types/NonCopyMoveAble.h"
 
 namespace open_json {
-    class Json : public Object {
+    class Json : public NonCopyMoveAble {
     public:
         Json();
 
@@ -14,7 +14,7 @@ namespace open_json {
 
         Json &operator=(Json &&other) noexcept = default;
 
-        class Value {
+        class Value : public NonCopyMoveAble {
         public:
             Value();
 

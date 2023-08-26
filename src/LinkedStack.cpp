@@ -1,4 +1,4 @@
-#include "../include/LinkedStack.h"
+#include "../include/core/LinkedStack.h"
 #include <cassert>
 #include <memory>
 
@@ -8,6 +8,14 @@ Node::Node() {
     m_next = std::shared_ptr<Node>(nullptr);
     m_prev = std::shared_ptr<Node>(nullptr);
 }
+
+Node::Node(Node &&other) noexcept: m_value(std::move(other.m_value)), m_next(std::move(other.m_next)),
+                                   m_prev(std::move(other.m_prev)) {
+    other.m_value = "";
+    other.m_prev = nullptr;
+    other.m_next = nullptr;
+}
+
 
 Node &Node::operator=(Node &&other) noexcept {
     this->m_value = std::move(other.m_value);
@@ -19,6 +27,11 @@ Node &Node::operator=(Node &&other) noexcept {
     other.m_next = nullptr;
     return *this;
 }
+
+LinkedStack::LinkedStack(LinkedStack &&other) noexcept: m_top(std::move(other.m_top)) {
+    other.m_top = nullptr;
+}
+
 
 [[maybe_unused]] std::shared_ptr<Node> LinkedStack::pop() {
     if (IS_NULL(m_top)) {

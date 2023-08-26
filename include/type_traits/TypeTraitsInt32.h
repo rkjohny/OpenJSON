@@ -2,7 +2,7 @@
 #define OPEN_JSON_TYPE_TRAITS_INT32_H
 
 #include <cstdint>
-#include "../Common.h"
+#include "../core/Common.h"
 #include "TypeTrailsCommon.h"
 
 namespace open_json {

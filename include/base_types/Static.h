@@ -3,7 +3,7 @@
 #define OPEN_JSON_STATIC_H
 
 # include "memory"
-#include "Common.h"
+#include "../core/Common.h"
 #include "NotAllowedToCreateNew.h"
 
 using namespace std;

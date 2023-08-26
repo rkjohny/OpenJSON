@@ -2,15 +2,16 @@
 #define OPEN_JSON_SINGLETON_H
 
 #include <memory>
-#include "Common.h"
+#include "../core/Common.h"
+#include "NonCopyNonMoveAble.h"
 
 namespace open_json {
     template<class T>
-    class Singleton {
+    class Singleton : public NonCopyNonMoveAble {
     protected:
         constexpr Singleton() = default;
 
-        static T m_singleton;
+        static T ms_singleton;
     public:
         virtual ~Singleton() = default;
 

@@ -1,8 +1,8 @@
-#include "../include/Singleton.h"
+#include "../include/base_types/Singleton.h"
 
 using namespace open_json;
 
 template<class T>
 [[maybe_unused]] T const &Singleton<T>::getInstance() {
-    return m_singleton;
+    return ms_singleton;
 }

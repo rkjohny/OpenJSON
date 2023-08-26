@@ -2,7 +2,7 @@
 #define OPEN_JSON_SERIALIZABLE_H
 
 #include <memory>
-#include "Common.h"
+#include "../core/Common.h"
 #include "AllowedToCreateNew.h"
 #include "CopyAbleMoveAble.h"
 
@@ -19,11 +19,11 @@ namespace open_json {
 
         explicit Serializable(const std::shared_ptr<Serializable> &another);
 
-        Serializable &operator=(const Serializable &another) = default;
+        virtual Serializable &operator=(const Serializable &another) = default;
 
-        Serializable &operator=(Serializable &&another) noexcept = default;
+        virtual Serializable &operator=(Serializable &&another) noexcept = default;
 
-         Serializable &operator=(const std::shared_ptr<Serializable> &another);
+        virtual Serializable &operator=(const std::shared_ptr<Serializable> &another);
     };
 
 } // open_json

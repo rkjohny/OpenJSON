@@ -4,7 +4,7 @@
 #include <memory>
 #include <string>
 #include "Common.h"
-#include "Object.h"
+#include "../base_types/Object.h"
 
 namespace open_json {
     class LinkedStack;
@@ -22,12 +22,7 @@ namespace open_json {
 
         ~Node() override = default;
 
-        Node(Node &&other) noexcept: m_value(std::move(other.m_value)), m_next(std::move(other.m_next)),
-                                     m_prev(std::move(other.m_prev)) {
-            other.m_value = "";
-            other.m_prev = nullptr;
-            other.m_next = nullptr;
-        }
+        Node(Node &&other) noexcept;
 
         Node &operator=(Node &&other) noexcept;
     };
@@ -39,9 +34,7 @@ namespace open_json {
     public:
         LinkedStack() = default;
 
-        LinkedStack(LinkedStack &&other) noexcept: m_top(std::move(other.m_top)) {
-            other.m_top = nullptr;
-        };
+        LinkedStack(LinkedStack &&other) noexcept;;
 
         LinkedStack &operator=(LinkedStack &&other) noexcept;
 

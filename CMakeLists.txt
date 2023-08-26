@@ -9,12 +9,12 @@ add_library(OpenJSON
         include/JsonParser.h
         src/JsonParser.cpp
         src/LinkedStack.cpp
-        include/LinkedStack.h
-        include/Common.h
-        include/Object.h
+        include/core/LinkedStack.h
+        include/core/Common.h
+        include/base_types/Object.h
         src/Singleton.cpp
-        include/Singleton.h
-        include/TypeTraits.h
+        include/base_types/Singleton.h
+        include/type_traits/TypeTraits.h
         include/type_traits/TypeTraitsChar.h
         include/type_traits/TypeTraitsInt8.h
         include/type_traits/TypeTrailsCommon.h
@@ -37,13 +37,26 @@ add_library(OpenJSON
         include/type_traits/TypeTraitsDecimal.h
         include/type_traits/TypeTraitsInteger.h
         src/Json.cpp
-        include/Json.h
-        include/AllowedToCreateNew.h
-        include/NonCopyNonMoveAble.h
-        include/CopyAbleMoveAble.h
-        include/NonCopyMoveAble.h
-        include/Static.h
-        include/Serializable.h
+        include/core/Json.h
+        include/base_types/AllowedToCreateNew.h
+        include/base_types/NonCopyNonMoveAble.h
+        include/base_types/CopyAbleMoveAble.h
+        include/base_types/NonCopyMoveAble.h
+        include/base_types/Static.h
+        include/base_types/Serializable.h
         src/CopyAbleMoveAble.cpp
         src/Serializable.cpp
+        include/RegisterGetterSetter.h
+        include/Serializer.h
+        include/Deserializer.h
+        src/JsonSerializer.cpp
+        include/core/JsonSerializer.h
+        src/JsonDeserializer.cpp
+        include/core/JsonDeserializer.h
+        src/Deserializer.cpp
+        src/Serializer.cpp
+        src/Getter.cpp
+        include/JsonSerializable.h
+        src/JsonSerializable.cpp
+        src/Setter.cpp
 )

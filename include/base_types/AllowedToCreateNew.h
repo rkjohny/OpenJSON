@@ -1,7 +1,7 @@
 #ifndef OPEN_JSON_ALLOWED_TO_CREATE_NEW_H
 #define OPEN_JSON_ALLOWED_TO_CREATE_NEW_H
 
-#include "Common.h"
+#include "../core/Common.h"
 
 namespace open_json {
     class AllowedToCreateNew {
