@@ -13,17 +13,17 @@ namespace open_json {
 
         ~Serializable() override = default;
 
-        Serializable(const Serializable &another) = default;
+        Serializable(const Serializable &) = default;
 
-        Serializable(Serializable &&another) noexcept = default;
+        Serializable(Serializable &&) noexcept = default;
 
-        explicit Serializable(const std::shared_ptr<Serializable> &another);
+        explicit Serializable(const std::shared_ptr<Serializable> &);
 
-        virtual Serializable &operator=(const Serializable &another) = default;
+        Serializable &operator=(const Serializable &) = default;
 
-        virtual Serializable &operator=(Serializable &&another) noexcept = default;
+        Serializable &operator=(Serializable &&) noexcept = default;
 
-        virtual Serializable &operator=(const std::shared_ptr<Serializable> &another);
+        Serializable &operator=(const std::shared_ptr<Serializable> &);
     };
 
 } // open_json

@@ -13,17 +13,17 @@ namespace open_json {
 
         static T ms_singleton;
     public:
-        virtual ~Singleton() = default;
+        ~Singleton() override = default;
 
-        Singleton(const Singleton &another) = delete;
+        Singleton(const Singleton &) = delete;
 
-        Singleton(Singleton &&another) noexcept = delete;
+        Singleton(Singleton &&) noexcept = delete;
 
-        Singleton(const std::shared_ptr<Singleton> &another) = delete;
+        Singleton(const std::shared_ptr<Singleton> &) = delete;
 
-        Singleton &operator=(const Singleton &another) = delete;
+        Singleton &operator=(const Singleton &) = delete;
 
-        Singleton &operator=(Singleton &&another) noexcept = delete;
+        Singleton &operator=(Singleton &&) noexcept = delete;
 
         [[maybe_unused]] T static const &getInstance();
     };

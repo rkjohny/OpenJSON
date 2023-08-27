@@ -10,7 +10,7 @@ namespace open_json {
     public:
         AbstractJsonSerializable() = default;
 
-        virtual ~AbstractJsonSerializable() = default;
+        ~AbstractJsonSerializable() override = default;
 
         virtual open_json::Json::Value &serialize() = 0;
 

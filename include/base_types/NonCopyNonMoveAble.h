@@ -14,15 +14,15 @@ namespace open_json {
 
         ~NonCopyNonMoveAble() override = default;
 
-        NonCopyNonMoveAble(const NonCopyNonMoveAble &another) = delete;
+        NonCopyNonMoveAble(const NonCopyNonMoveAble &) = delete;
 
-        NonCopyNonMoveAble(NonCopyNonMoveAble &&another) noexcept = delete;
+        NonCopyNonMoveAble(NonCopyNonMoveAble &&) noexcept = delete;
 
-        NonCopyNonMoveAble(const std::shared_ptr<NonCopyNonMoveAble> &another) = delete;
+        NonCopyNonMoveAble(const std::shared_ptr<NonCopyNonMoveAble> &) = delete;
 
-        NonCopyNonMoveAble &operator=(const NonCopyNonMoveAble &another) = delete;
+        NonCopyNonMoveAble &operator=(const NonCopyNonMoveAble &) = delete;
 
-        NonCopyNonMoveAble &operator=(NonCopyNonMoveAble &&another) noexcept = delete;
+        NonCopyNonMoveAble &operator=(NonCopyNonMoveAble &&) noexcept = delete;
     };
 }
 

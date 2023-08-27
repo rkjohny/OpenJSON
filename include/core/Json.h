@@ -20,7 +20,7 @@ namespace open_json {
 
             Value(Value &&other) noexcept = default;
 
-            virtual ~Value();
+            ~Value() override;
 
             Value &operator=(Value &&other) noexcept = default;
         };

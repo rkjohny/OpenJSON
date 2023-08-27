@@ -4,16 +4,16 @@
 using namespace open_json;
 
 template<class T>
-void Deserializer::fromJson(T **object, Json::Value &jvalue) {
-    JsonDeserializer::fromJson(object, jvalue);
+void Deserializer::fromJson(T **object, Json::Value &jsonValue) {
+    JsonDeserializer::fromJson(object, jsonValue);
 }
 
 template<class T>
-void Deserializer::fromJson(T *object, const Json::Value &jvalue) {
-    JsonDeserializer::fromJson(object, jvalue);
+void Deserializer::fromJson(T *object, const Json::Value &jsonValue) {
+    JsonDeserializer::fromJson(object, jsonValue);
 }
 
 template<class T>
-void Deserializer::fromJson(T &object, const Json::Value &jvalue) {
-    JsonDeserializer::fromJson(object, jvalue);
+void Deserializer::fromJson(T &object, const Json::Value &jsonValue) {
+    JsonDeserializer::fromJson(object, jsonValue);
 }

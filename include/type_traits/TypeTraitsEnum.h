@@ -1,4 +1,4 @@
-#ifndef OPEN_JSON_TYPE_TRAITS_ ENUM_H
+#ifndef OPEN_JSON_TYPE_TRAITS_ENUM_H
 #define OPEN_JSON_TYPE_TRAITS_ENUM_H
 
 #include "TypeTrailsCommon.h"

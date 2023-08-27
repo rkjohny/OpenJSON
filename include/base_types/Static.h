@@ -13,15 +13,15 @@ namespace open_json {
     class Static : public NotAllowedToCreateNew {
     public:
 
-        Static(const Static &another) = delete;
+        Static(const Static &) = delete;
 
-        Static(Static &&another) noexcept = delete;
+        Static(Static &&) noexcept = delete;
 
-        Static(const std::shared_ptr<Static> &another) = delete;
+        Static(const std::shared_ptr<Static> &) = delete;
 
-        Static &operator=(const Static &another) = delete;
+        Static &operator=(const Static &) = delete;
 
-        Static &operator=(Static &&another) noexcept = delete;
+        Static &operator=(Static &&) noexcept = delete;
     };
 
 } // open_json

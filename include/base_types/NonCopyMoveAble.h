@@ -14,13 +14,13 @@ namespace open_json {
 
         ~NonCopyMoveAble() override = default;
 
-        NonCopyMoveAble(const NonCopyMoveAble &another) = delete;
+        NonCopyMoveAble(const NonCopyMoveAble &) = delete;
 
-        NonCopyMoveAble(NonCopyMoveAble &&another) noexcept = default;
+        NonCopyMoveAble(NonCopyMoveAble &&) noexcept = default;
 
-        NonCopyMoveAble &operator=(const NonCopyMoveAble &another) = delete;
+        NonCopyMoveAble &operator=(const NonCopyMoveAble &) = delete;
 
-        NonCopyMoveAble &operator=(NonCopyMoveAble &&another) noexcept = default;
+        NonCopyMoveAble &operator=(NonCopyMoveAble &&) noexcept = default;
     };
 }
 

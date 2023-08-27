@@ -12,11 +12,11 @@ namespace open_json {
     public:
         JsonSerializable() = default;
 
-        virtual ~JsonSerializable() = default;
+        ~JsonSerializable() override = default;
 
         open_json::Json::Value &serialize() override;
 
-        void deserialize(const open_json::Json::Value &jvalue) override;
+        void deserialize(const open_json::Json::Value &jsonValue) override;
 
         REGISTER_GETTER_INCLUDING_BASE_START(AbstractJsonSerializable)
         REGISTER_GETTER_INCLUDING_BASE_END

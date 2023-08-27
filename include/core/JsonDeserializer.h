@@ -9,13 +9,13 @@ namespace open_json {
     class JsonDeserializer : public Static {
     public:
         template<class T>
-        static void fromJson(T &object, const open_json::Json::Value &jvalue);
+        static void fromJson(T &object, const open_json::Json::Value &jsonValue);
 
         template<class T>
-        static void fromJson(T *object, const open_json::Json::Value &jvalue);
+        static void fromJson(T *object, const open_json::Json::Value &jsonValue);
 
         template<class T>
-        static void fromJson(T **object, open_json::Json::Value &jvalue);
+        static void fromJson(T **object, open_json::Json::Value &jsonValue);
     };
 } // open_json
 

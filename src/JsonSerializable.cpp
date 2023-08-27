@@ -3,8 +3,8 @@
 using namespace open_json;
 
 template<class T>
-void JsonSerializable<T>::deserialize(const Json::Value &jvalue) {
-    Deserializer::fromJson<T>(reinterpret_cast<T *> (this), jvalue);
+void JsonSerializable<T>::deserialize(const Json::Value &jsonValue) {
+    Deserializer::fromJson<T>(reinterpret_cast<T *> (this), jsonValue);
 }
 
 template<class T>

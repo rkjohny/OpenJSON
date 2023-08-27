@@ -5,7 +5,7 @@
 #define NOT_NULL
 #endif
 
-#define IS_NULL(a) (a == nullptr)
+#define IS_NULL(a) ((a) == nullptr)
 
 
 #if defined(WIN32) || defined(_WIN32)

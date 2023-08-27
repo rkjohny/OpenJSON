@@ -13,17 +13,17 @@ namespace open_json {
 
         ~CopyAbleMoveAble() override = default;
 
-        CopyAbleMoveAble(const CopyAbleMoveAble &another) = default;
+        CopyAbleMoveAble(const CopyAbleMoveAble &) = default;
 
-        CopyAbleMoveAble(CopyAbleMoveAble &&another) noexcept = default;
+        CopyAbleMoveAble(CopyAbleMoveAble &&) noexcept = default;
 
-        explicit CopyAbleMoveAble(const std::shared_ptr<CopyAbleMoveAble> &another);
+        explicit CopyAbleMoveAble(const std::shared_ptr<CopyAbleMoveAble> &);
 
-        virtual CopyAbleMoveAble &operator=(const CopyAbleMoveAble &another) = default;
+        CopyAbleMoveAble &operator=(const CopyAbleMoveAble &) = default;
 
-        virtual CopyAbleMoveAble &operator=(CopyAbleMoveAble &&another) noexcept = default;
+        CopyAbleMoveAble &operator=(CopyAbleMoveAble &&) noexcept = default;
 
-        virtual CopyAbleMoveAble &operator=(const std::shared_ptr<CopyAbleMoveAble> &another);
+        CopyAbleMoveAble &operator=(const std::shared_ptr<CopyAbleMoveAble> &);
     };
 }
 
